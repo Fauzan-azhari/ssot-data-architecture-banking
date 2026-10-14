@@ -1,0 +1,1 @@
+SELECT * FROM dm.vw_daily_portfolio_risk_summary;
