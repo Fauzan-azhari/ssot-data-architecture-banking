@@ -1,0 +1,1 @@
+# ssot-data-architecture-banking
