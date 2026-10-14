@@ -9,7 +9,7 @@ A production-grade Data Warehouse implementation modeling an end-to-end digital 
 
 The warehouse decouples high-frequency transactional mutations from daily risk position snapshots through a central facility anchor.
 
-![Enterprise Data Architecture](assets/erd_snowflake_architecture.png)
+![Enterprise Data Architecture](erd_snowflake_architecture.png)
 
 ### Domain Segregation
 * **Central Facility Hub (`dim_loan_facility`):** Serves as the central entity linking counterparties, underwriting scores, and facility terms.
