@@ -29,3 +29,30 @@ ssot-data-architecture-banking/
 ├── dbeaver_risk_mart_execution.png
 ├── erd_snowflake_architecture.png
 └── README.md
+```
+
+---
+
+## ⚙️ Data Warehouse Layering
+
+1. `stg` **(Staging Layer):** Landing area for raw partner feeds and payload isolation (`quarantine_bad_records`).
+2. `dwh` **(Core Warehouse):** Enterprise Snowflake Dimensional Model enforcing relational constraints, foreign keys, and audit metadata.
+3. `dm` **(Data Mart):** Analytical serving views powering Credit Risk dashboards and executive aggregations.
+
+---
+
+## 📊 Proof of Work: Risk Mart Analytics
+
+Execution of `dm.vw_daily_portfolio_risk_summary` aggregating portfolio exposure and ECL provisions across 25 accounts:
+
+![DBeaver Risk Mart Execution](dbeaver_risk_mart_execution.png)
+
+---
+
+## 🚀 Reproduction Steps
+
+Execute the SQL scripts in order using any PostgreSQL client (e.g., DBeaver, psql):
+
+1. **Deploy Schemas & DDL:** Run `01_ddl_digital_bank_ssot.sql`
+2. **Seed Production Mock Data:** Run `02_seed_mock_portfolio_data.sql`
+3. **Run Analytics Queries:** Run `03_risk_mart_analytics_query.sql`
